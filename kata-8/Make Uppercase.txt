@@ -1,0 +1,9 @@
+Write function makeUpperCase.
+
+
+SOLUTION:
+
+function makeUpperCase(str) {
+  var uppercase = str.toUpperCase();
+  return uppercase
+}
