@@ -28,7 +28,8 @@ function toCamelCase(s,n){
     return word[0].toUpperCase() + word.slice(1);
   }
   function upperCaseWords(sentence) {
-    var words = sentence.split(" ");
+    var lowerCaseSentence = sentence.toLowerCase()
+    var words = lowerCaseSentence.split(" ");
     for (var i = 1; i < words.length; i++){
       words[i] = upperCaseFirst(words[i]);
     }
