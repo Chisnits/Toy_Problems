@@ -1,0 +1,47 @@
+I have a cat and a dog.
+
+I got them at the same time as kitten/puppy. That was humanYears or human_years years ago.
+
+Return their respective ages now as [humanYears,catYears,dogYears] or [human_years,cat_years,dog_years]
+
+NOTES:
+
+humanYears >= 1
+Cat Years
+15 cat years for first year
++9 cat years for second year
++4 cat years for each year after that
+Dog Years
+15 dog years for first year
++9 dog years for second year
++5 dog years for each year after that
+
+SOLUTION:
+var humanYearsCatYearsDogYears = function(humanYears) {
+  function catYearAdder(year){
+    var x = year - 2
+    var y = 15 + 9;
+    var z = x * 4;
+    return (y+z)
+  }
+  function dogYearAdder(year){
+    var x = year - 2
+    var y = 15 + 9;
+    var z = x * 5;
+    return (y+z)
+  }
+  var totalYears = []
+  let firstDogYear = 15;
+  let firstCatYear = 15;
+    if(humanYears === 1){
+      totalYears.push(humanYears, firstCatYear, firstDogYear)
+    } else if (humanYears === 2){
+      let cat2 = firstCatYear + 9
+      let dog2 = firstDogYear + 9
+      totalYears.push(humanYears, dog2 , cat2)
+    }  else if (humanYears > 2){
+      totalYears.push(humanYears, catYearAdder(humanYears), dogYearAdder(humanYears))
+    }
+  console.log(totalYears)
+  return totalYears
+}
