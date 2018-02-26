@@ -1,0 +1,39 @@
+In this Kata, you will be given a string and two indexes. Your task is to reverse the portion of that string between those two indexes inclusive.
+
+solve("codewars",1,5) = "cawedors" -- elements at index 1 to 5 inclusive are "odewa". So we reverse them.
+solve("cODEWArs", 1,5) = "cAWEDOrs" -- to help visualize.
+Input will be lowercase and uppercase letters only.
+
+More examples in the test cases!
+
+Good luck!
+
+
+SOLUTION:
+
+function solve(st,a,b){
+  var list = []
+ for(var i=0; i < st.length; i++){
+
+     loop through the str to find the letters in between
+     the index's provided.
+
+   if(i >= a && i <= b){
+    push the letters into an array.
+     list.push(st[i])
+   }
+ }
+
+ reverse the letters in the array
+
+var reversed = list.reverse()
+
+replace the letters in the original string with
+the reversed letters at the correct index.
+
+var s = st.substr(0, a) + reversed + st.substr(b + 1);
+
+cut out the commas placed in while pushing to an array.
+
+return s.replace(/,/g, '')
+}
